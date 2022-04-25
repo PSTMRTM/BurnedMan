@@ -86,7 +86,7 @@
 		var/mob/living/carbon/human/H = owner
 		H.update_genitals()
 
-/mob/living/carbon/verb/toggle_genitals()
+/*/mob/living/carbon/verb/toggle_genitals()
 	set category = "IC"
 	set name = "Expose/Hide genitals"
 	set desc = "Allows you to toggle which genitals should show through clothes or not."
@@ -108,7 +108,7 @@
 		var/picked_visibility = input(src, "Choose visibility setting", "Expose/Hide genitals") as null|anything in GLOB.genitals_visibility_toggles
 		if(picked_visibility && picked_organ && (picked_organ in internal_organs))
 			picked_organ.toggle_visibility(picked_visibility)
-	return
+	return	*/
 
 /*/mob/living/carbon/verb/toggle_arousal_state()
 	set category = "IC"

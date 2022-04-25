@@ -186,11 +186,4 @@ proc/get_top_level_mob(mob/S)
 		return
 	usr.emote("subtle")
 
-///////////////// VERB CODE 2
-/mob/living/verb/subtler()
-	set name = "Subtler Anti-Ghost"
-	set category = "IC"
-	if(GLOB.say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
-		return
-	usr.emote("subtler")
+

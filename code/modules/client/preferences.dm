@@ -308,7 +308,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[APPEARANCE_TAB]' [current_tab == APPEARANCE_TAB ? "class='linkOn'" : ""]>Character Appearance</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[LOADOUT_TAB]' [current_tab == LOADOUT_TAB ? "class='linkOn'" : ""]>Loadout</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[GAME_PREFERENCES_TAB]' [current_tab == GAME_PREFERENCES_TAB ? "class='linkOn'" : ""]>Game Preferences</a>"
-	dat += "<a href='?_src_=prefs;preference=tab;tab=[CONTENT_PREFERENCES_TAB]' [current_tab == CONTENT_PREFERENCES_TAB ? "class='linkOn'" : ""]>Content Preferences</a>"
 	dat += "<a href='?_src_=prefs;preference=tab;tab=[KEYBINDINGS_TAB]' [current_tab == KEYBINDINGS_TAB ? "class='linkOn'" : ""]>Keybindings</a>"
 
 	if(!path)
@@ -612,7 +611,7 @@ Records disabled until a use for them is found
 			dat += "</td>"
 */
 			dat +="<td width='220px' height='300px' valign='top'>"
-			if(NOGENITALS in pref_species.species_traits)
+/*			if(NOGENITALS in pref_species.species_traits)
 				dat += "<b>Your species ([pref_species.name]) does not support genitals!</b><br>"
 			else
 				dat += "<h3>Penis</h3>"
@@ -659,6 +658,7 @@ Records disabled until a use for them is found
 //					dat += "<b>Breasts Shape:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_shape;task=input'>[features["breasts_shape"]]</a>"
 //					dat += "<b>Breasts Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=breasts_visibility;task=input'>[features["breasts_visibility"]]</a>"
 //					dat += "<b>Lactates:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=breasts_producing'>[features["breasts_producing"] == TRUE ? "Yes" : "No"]</a>"
+*/
 				dat += "</td>"
 			dat += "</td>"
 			dat += "</tr></table>"
@@ -2106,7 +2106,7 @@ Records disabled until a use for them is found
 					if(new_dors)
 						features["xenodorsal"] = new_dors
 
-				//Genital code
+/*Genital code
 				if("cock_color")
 					var/new_cockcolor = input(user, "Penis color:", "Character Preference","#"+features["cock_color"]) as color|null
 					if(new_cockcolor)
@@ -2211,6 +2211,7 @@ Records disabled until a use for them is found
 					var/n_vis = input(user, "Vagina Visibility", "Character Preference") as null|anything in CONFIG_GET(keyed_list/safe_visibility_toggles)
 					if(n_vis)
 						features["vag_visibility"] = n_vis
+						*/
 
 				if("ooccolor")
 					var/new_ooccolor = input(user, "Choose your OOC colour:", "Game Preference",ooccolor) as color|null
@@ -2350,7 +2351,7 @@ Records disabled until a use for them is found
 */
 		else
 			switch(href_list["preference"])
-				//CITADEL PREFERENCES EDIT - I can't figure out how to modularize these, so they have to go here. :c -Pooj
+				/*CITADEL PREFERENCES EDIT - I can't figure out how to modularize these, so they have to go here. :c -Pooj
 				if("arousable")
 					arousable = !arousable
 				if("has_cock")
@@ -2370,7 +2371,8 @@ Records disabled until a use for them is found
 					if(features["has_vag"] == FALSE)
 						features["has_womb"] = FALSE
 				if("has_womb")
-					features["has_womb"] = !features["has_womb"]
+					features["has_womb"] = !features["has_womb"]*/ //	No ERP.
+
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.change_view(CONFIG_GET(string/default_view))
