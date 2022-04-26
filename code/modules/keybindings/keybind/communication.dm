@@ -48,12 +48,6 @@
 	full_name = "Subtle Emote"
 	clientside = "subtle"
 
-/datum/keybinding/client/communication/subtler
-	hotkey_keys = list("6")
-	name = "Subtler"
-	full_name = "Subtler Anti-Ghost Emote"
-	clientside = "subtler-anti-ghost"
-
 /datum/keybinding/client/communication/whisper
 	hotkey_keys = list("Y")
 	name = "Whisper"
